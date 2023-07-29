@@ -4,7 +4,7 @@ import { Context } from '../../context/Context';
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "./topbar.css"
 export default function Topbar() {
-
+  const PLocation ="http://localhost:5000/images/";
   const {user,dispatch} = useContext(Context);
   const handleLogout=()=>{
     dispatch({type:"LOGOUT"});
@@ -28,7 +28,7 @@ export default function Topbar() {
       <li className="nav-item nav-link" onClick={handleLogout}>{user && "LOGOUT"}</li>
     </ul>
     </div>
- {user ? (<Link className='nav-link ' to="/setting"><img className="topImg" src={user.profilePic} alt="None"/></Link>) : (
+ {user ? (<Link className='nav-link ' to="/setting"><img className="topImg" src={PLocation+user.profilePic} alt="None"/></Link>) : (
   
    <ul className="navbar-nav bd-navbar-nav ml-md-auto d-none d-md-flex">
             <li className="nav-item"><Link className="nav-link" to="/login">LOGIN</Link></li>

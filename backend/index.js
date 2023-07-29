@@ -45,7 +45,10 @@ app.use("/api/posts",postsRoute);
 app.use("/api/categories",catRoute);
 app.use("/api/comment/new",commentRoute);
 
-app.listen("5000",()=>{
-    console.log("backend running");
+
+const port = process.env.PORT || 5000;
+
+app.listen(port,()=>{
+    console.log(`serve running at http://localhost:${port}`);
 })
 
